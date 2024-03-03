@@ -1,0 +1,30 @@
+import {model,Schema} from "mongoose" 
+export const OrderDetail = model('order-details',new Schema({ 
+    order_id:{
+        type:Schema.Types.ObjectId,
+        required:true,
+        ref:'orders'
+    },
+    product_id:{
+        type:Schema.Types.ObjectId,
+        required:true,
+        ref:'products',
+    },
+    price:{
+        type:Number,
+        required:true,
+    },
+    qty:{
+        type:Number,
+        required:true,
+    },
+    total:{
+        type:Number,
+        required:true,
+    },
+},{
+    timestamps:false,
+    autoCreate:true,
+    autoIndex:true,
+}
+))
